@@ -5,8 +5,10 @@
  */
 package co.edu.sena.pruebaJava.rest.services;
 
+import co.edu.sena.pruebaJava.jpa.entities.Automovil;
 import co.edu.sena.pruebaJava.jpa.sessions.PuestoFacade;
-import co.edu.sena.pruebajava.jpa.entities.Puesto;
+import co.edu.sena.pruebaJava.jpa.entities.Puesto;
+import co.edu.sena.pruebaJava.jpa.sessions.AutomovilFacade;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.ws.rs.Consumes;
@@ -32,6 +34,9 @@ public class PuestoREST {
     @EJB
     private PuestoFacade puestoEJB;
     
+    @EJB
+    private AutomovilFacade automovilEJB;
+    
     @GET 
     public List<Puesto> findAll(){
         return puestoEJB.findAll();
@@ -49,10 +54,9 @@ public class PuestoREST {
     }
   
     @PUT
-    public void edit(@QueryParam("id") Integer id, Puesto puesto) {
-        puesto.setId(id);
-        puesto.setAutomovil(puesto.getAutomovil());
-        puesto.setParqueadero(puesto.getParqueadero());
+    public Puesto edit(@QueryParam("placa") Integer placa,Puesto puesto) {
+        Automovil carro = automovilEJB.find(placa);
         puestoEJB.edit(puesto);
+        return puesto;
     }
-}
+}   

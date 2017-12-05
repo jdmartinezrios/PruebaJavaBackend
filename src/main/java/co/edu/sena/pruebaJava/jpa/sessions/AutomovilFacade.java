@@ -5,14 +5,14 @@
  */
 package co.edu.sena.pruebaJava.jpa.sessions;
 
-import co.edu.sena.pruebajava.jpa.entities.Automovil;
+import co.edu.sena.pruebaJava.jpa.entities.Automovil;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 /**
  *
- * @author adsi1261718
+ * @author Juan David Martinez
  */
 @Stateless
 public class AutomovilFacade extends AbstractFacade<Automovil> {

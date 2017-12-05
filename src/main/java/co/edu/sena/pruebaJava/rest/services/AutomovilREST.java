@@ -6,7 +6,7 @@
 package co.edu.sena.pruebaJava.rest.services;
 
 import co.edu.sena.pruebaJava.jpa.sessions.AutomovilFacade;
-import co.edu.sena.pruebajava.jpa.entities.Automovil;
+import co.edu.sena.pruebaJava.jpa.entities.Automovil;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.ws.rs.Consumes;

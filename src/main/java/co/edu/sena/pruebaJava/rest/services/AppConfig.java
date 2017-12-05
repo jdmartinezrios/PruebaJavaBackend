@@ -7,7 +7,7 @@ package co.edu.sena.pruebaJava.rest.services;
 
 /**
  *
- * @author adsi1261718
+ * @author adsi1261718w
  */
 import org.glassfish.jersey.server.ResourceConfig;
 import javax.ws.rs.ApplicationPath;
@@ -15,6 +15,6 @@ import javax.ws.rs.ApplicationPath;
     @ApplicationPath("api")
     public class AppConfig extends ResourceConfig{
         public AppConfig(){
-        packages("co.edu.sena.pruebajava.rest.services");
+        packages("co.edu.sena.pruebaJava.rest.services");
     }
     }

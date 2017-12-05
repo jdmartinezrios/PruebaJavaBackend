@@ -7,7 +7,7 @@ package co.edu.sena.pruebaJava.rest.services;
 
 
 import co.edu.sena.pruebaJava.jpa.sessions.ParqueaderoFacade;
-import co.edu.sena.pruebajava.jpa.entities.Parqueadero;
+import co.edu.sena.pruebaJava.jpa.entities.Parqueadero;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.ws.rs.Consumes;

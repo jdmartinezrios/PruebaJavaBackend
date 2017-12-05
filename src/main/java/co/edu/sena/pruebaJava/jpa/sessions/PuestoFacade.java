@@ -5,14 +5,14 @@
  */
 package co.edu.sena.pruebaJava.jpa.sessions;
 
-import co.edu.sena.pruebajava.jpa.entities.Puesto;
+import co.edu.sena.pruebaJava.jpa.entities.Puesto;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 /**
  *
- * @author adsi1261718
+ * @author Juan David Martinez
  */
 @Stateless
 public class PuestoFacade extends AbstractFacade<Puesto> {
