@@ -54,9 +54,8 @@ public class PuestoREST {
     }
   
     @PUT
-    public Puesto edit(@QueryParam("placa") Integer placa,Puesto puesto) {
-        Automovil carro = automovilEJB.find(placa);
-        puestoEJB.edit(puesto);
-        return puesto;
+    public void edit(Puesto puesto) {
+       // Automovil carro = automovilEJB.find(placa);
+        puestoEJB.edit(puesto);     
     }
 }   
