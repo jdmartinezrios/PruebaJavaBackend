@@ -6,6 +6,7 @@
 package co.edu.sena.pruebaJava.rest.services;
 
 import co.edu.sena.pruebaJava.jpa.entities.Automovil;
+import co.edu.sena.pruebaJava.jpa.entities.Parqueadero;
 import co.edu.sena.pruebaJava.jpa.sessions.PuestoFacade;
 import co.edu.sena.pruebaJava.jpa.entities.Puesto;
 import co.edu.sena.pruebaJava.jpa.sessions.AutomovilFacade;
@@ -54,8 +55,7 @@ public class PuestoREST {
     }
   
     @PUT
-    public void edit(Puesto puesto) {
-       // Automovil carro = automovilEJB.find(placa);
+    public void edit(Puesto puesto) {      
         puestoEJB.edit(puesto);     
     }
 }   

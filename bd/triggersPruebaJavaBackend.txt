@@ -1,0 +1,56 @@
+restar puestos
+
+CREATE TRIGGER actualizarPuesto after insert on puestos
+
+for each row 
+
+BEGIN
+
+if(new.diponibilidadPuesto = 0)then
+update parqueadero
+
+set tamano = tamano-1
+
+where id = 1;  
+
+END IF;
+END;
+
+//
+
+
+sumar puestos
+
+CREATE TRIGGER sumarPuesto after update on puestos
+
+for each row 
+
+BEGIN
+
+update parqueadero
+
+set tamano = tamano+1
+
+where id = 1;
+
+END;
+
+//
+
+CREATE TRIGGER sumarPuesto after update on puestos
+
+for each row 
+
+BEGIN
+
+if(new.diponibilidadPuesto = 1) then
+update parqueadero
+
+set tamano = tamano+1
+
+where id = 1;
+
+END IF;
+END;
+
+//

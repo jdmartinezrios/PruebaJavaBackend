@@ -36,7 +36,7 @@ public class Puesto implements Serializable {
     @Column(name = "id")
     private Integer id;
     @Column(name = "diponibilidadPuesto")
-    private Boolean diponibilidadPuesto = true;
+    private Boolean diponibilidadPuesto = false;
     @JoinColumn(name = "placa_automovil", referencedColumnName = "placa")
     @ManyToOne(optional = false)
     private Automovil automovil;
