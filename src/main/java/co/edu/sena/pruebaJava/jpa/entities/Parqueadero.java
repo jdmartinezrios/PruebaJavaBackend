@@ -61,6 +61,11 @@ public class Parqueadero implements Serializable {
     public Parqueadero(Integer id) {
         this.id = id;
     }
+    
+     public Parqueadero(Integer id, Integer tamano) {
+        this.id = id;
+        this.tamano = tamano;
+    }
 
     public Integer getId() {
         return id;
@@ -134,13 +139,5 @@ public class Parqueadero implements Serializable {
 
     public void setPuestoList(List<Puesto> puestoList) {
         this.puestoList = puestoList;
-    }
-
-    
-
-    @Override
-    public String toString() {
-        return "co.edu.sena.pruebajava.jpa.entities.Parqueadero[ tamano=" + tamano + " ]";
-    }
-    
+    }    
 }

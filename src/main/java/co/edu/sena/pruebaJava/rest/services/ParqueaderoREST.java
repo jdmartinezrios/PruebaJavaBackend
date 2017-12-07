@@ -49,9 +49,8 @@ public class ParqueaderoREST {
         parqueaderoEJB.create(parqueadero);
     }
   
-    @PUT
-    @Path("{id}")
-    public void edit(@PathParam("id") Integer id, Parqueadero parqueadero) {
+    @PUT   
+    public void edit(Parqueadero parqueadero) {
         parqueaderoEJB.edit(parqueadero);
     }
 }

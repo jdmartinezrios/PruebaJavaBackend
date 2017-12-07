@@ -47,9 +47,9 @@ if(new.diponibilidadPuesto = 1) then
 update parqueadero
 
 set tamano = tamano+1
-
+,
+ingresos = 5000
 where id = 1;
-
 END IF;
 END;
 
