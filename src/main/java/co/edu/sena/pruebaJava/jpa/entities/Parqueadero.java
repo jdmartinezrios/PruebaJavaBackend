@@ -18,11 +18,19 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
+import org.eclipse.persistence.annotations.Cache;
+import org.eclipse.persistence.annotations.CacheType;
+
 
 /**
  *
  * @author adsi1261718
  */
+/*@Cache(
+type=CacheType.NONE,
+expiry=0,
+alwaysRefresh=true
+)*/
 @Entity
 @Table(name = "parqueadero")
 @XmlRootElement

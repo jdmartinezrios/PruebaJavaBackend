@@ -6,6 +6,7 @@
 package co.edu.sena.pruebaJava.jpa.entities;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
@@ -16,6 +17,8 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -38,12 +41,12 @@ public class Automovil implements Serializable {
     @NotNull
     @Column(name = "placa")
     private Integer placa;
-    @Size(max = 45)
-    @Column(name = "horaSalida")
-    private String horaSalida;
-    @Size(max = 45)
-    @Column(name = "horaEntrada")
-    private String horaEntrada;
+    @Column(name = "horaSalida",updatable = false)
+    @Temporal(TemporalType.TIMESTAMP)   
+    private Date horaSalida;
+    @Column(name = "horaEntrada",insertable = false, updatable = false)
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date horaEntrada;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "automovil")
     private List<Puesto> puestoList;
 
@@ -62,19 +65,19 @@ public class Automovil implements Serializable {
         this.placa = placa;
     }
 
-    public String getHoraSalida() {
+    public Date getHoraSalida() {
         return horaSalida;
     }
 
-    public void setHoraSalida(String horaSalida) {
+    public void setHoraSalida(Date horaSalida) {
         this.horaSalida = horaSalida;
     }
 
-    public String getHoraEntrada() {
+    public Date getHoraEntrada() {
         return horaEntrada;
     }
 
-    public void setHoraEntrada(String horaEntrada) {
+    public void setHoraEntrada(Date horaEntrada) {
         this.horaEntrada = horaEntrada;
     }
 

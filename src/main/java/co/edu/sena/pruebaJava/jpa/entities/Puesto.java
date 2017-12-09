@@ -17,6 +17,8 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlRootElement;
+import org.eclipse.persistence.annotations.Cache;
+import org.eclipse.persistence.annotations.CacheType;
 
 /**
  *
@@ -38,7 +40,7 @@ public class Puesto implements Serializable {
     @Column(name = "diponibilidadPuesto")
     private Boolean diponibilidadPuesto = false;
     @JoinColumn(name = "placa_automovil", referencedColumnName = "placa")
-    @ManyToOne(optional = false)
+    @ManyToOne
     private Automovil automovil;
     @JoinColumn(name = "id_parqueadero", referencedColumnName = "id")
     @ManyToOne(optional = false)

@@ -55,7 +55,9 @@ public class PuestoREST {
     }
   
     @PUT
-    public void edit(Puesto puesto) {      
-        puestoEJB.edit(puesto);     
+    public void edit(Puesto puesto) { 
+        if(puesto.getDiponibilidadPuesto() == true){
+            puestoEJB.remove(puesto);
+        }       
     }
 }   
