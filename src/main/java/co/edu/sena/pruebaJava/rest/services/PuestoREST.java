@@ -5,11 +5,8 @@
  */
 package co.edu.sena.pruebaJava.rest.services;
 
-import co.edu.sena.pruebaJava.jpa.entities.Automovil;
-import co.edu.sena.pruebaJava.jpa.entities.Parqueadero;
 import co.edu.sena.pruebaJava.jpa.sessions.PuestoFacade;
 import co.edu.sena.pruebaJava.jpa.entities.Puesto;
-import co.edu.sena.pruebaJava.jpa.sessions.AutomovilFacade;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.ws.rs.Consumes;
@@ -19,7 +16,6 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
 /**
@@ -34,10 +30,7 @@ public class PuestoREST {
     
     @EJB
     private PuestoFacade puestoEJB;
-    
-    @EJB
-    private AutomovilFacade automovilEJB;
-    
+             
     @GET 
     public List<Puesto> findAll(){
         return puestoEJB.findAll();
@@ -55,9 +48,9 @@ public class PuestoREST {
     }
   
     @PUT
-    public void edit(Puesto puesto) { 
-        if(puesto.getDiponibilidadPuesto() == true){
+    public void edit(Puesto puesto) {         
+        if(puesto.getDiponibilidadPuesto() == true){           
             puestoEJB.remove(puesto);
-        }       
+        }
     }
 }   

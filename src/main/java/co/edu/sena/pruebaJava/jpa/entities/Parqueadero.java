@@ -10,8 +10,6 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
@@ -19,23 +17,19 @@ import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 import org.eclipse.persistence.annotations.Cache;
-import org.eclipse.persistence.annotations.CacheType;
-
-
+import static org.eclipse.persistence.config.CacheIsolationType.ISOLATED;
 /**
  *
  * @author adsi1261718
  */
-/*@Cache(
-type=CacheType.NONE,
+@Cache(
+isolation=ISOLATED,   
 expiry=0,
 alwaysRefresh=true
-)*/
+)
 @Entity
 @Table(name = "parqueadero")
 @XmlRootElement
-@NamedQueries({
-    @NamedQuery(name = "Parqueadero.findAll", query = "SELECT p FROM Parqueadero p")})
 public class Parqueadero implements Serializable {
  
     private static final long serialVersionUID = 1L;

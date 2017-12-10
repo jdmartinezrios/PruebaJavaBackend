@@ -20,14 +20,20 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
+import org.eclipse.persistence.annotations.Cache;
+import static org.eclipse.persistence.config.CacheIsolationType.ISOLATED;
 
 /**
  *
  * @author adsi1261718
  */
+@Cache(
+isolation=ISOLATED,   
+expiry=0,
+alwaysRefresh=true
+)
 @Entity
 @Table(name = "automovil")
 @XmlRootElement
@@ -41,7 +47,7 @@ public class Automovil implements Serializable {
     @NotNull
     @Column(name = "placa")
     private Integer placa;
-    @Column(name = "horaSalida",updatable = false)
+    @Column(name = "horaSalida",updatable = true)
     @Temporal(TemporalType.TIMESTAMP)   
     private Date horaSalida;
     @Column(name = "horaEntrada",insertable = false, updatable = false)

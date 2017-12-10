@@ -48,8 +48,7 @@ public class AutomovilREST {
   
     //dar salida
     @PUT
-    @Path("{id}")
-    public void edit(@PathParam("id") Integer id, Automovil automovil) {
+    public void edit(Automovil automovil) {
         automovilEJB.edit(automovil);
     }
 }

@@ -19,11 +19,17 @@ import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlRootElement;
 import org.eclipse.persistence.annotations.Cache;
 import org.eclipse.persistence.annotations.CacheType;
+import static org.eclipse.persistence.config.CacheIsolationType.ISOLATED;
 
 /**
  *
  * @author adsi1261718
  */
+@Cache(
+isolation=ISOLATED,   
+expiry=0,
+alwaysRefresh=true
+)
 @Entity
 @Table(name = "puestos")
 @XmlRootElement
