@@ -1,4 +1,6 @@
-restar puestos
+trigger para restar puestos
+:
+---------------------//------------------------
 
 CREATE TRIGGER actualizarPuesto after insert on puestos
 
@@ -18,25 +20,11 @@ END;
 
 //
 
+---------------------//-----------------------
 
-sumar puestos
+trigger para sumar puestos y definir ingresos:
 
-CREATE TRIGGER sumarPuesto after update on puestos
-
-for each row 
-
-BEGIN
-
-update parqueadero
-
-set tamano = tamano+1
-
-where id = 1;
-
-END;
-
-//
-
+----------------------//--------------------------
 CREATE TRIGGER sumarPuesto after update on puestos
 
 for each row 
@@ -48,9 +36,11 @@ update parqueadero
 
 set tamano = tamano+1
 ,
-ingresos = 5000
+ingresos = tarifa + ingresos
 where id = 1;
 END IF;
 END;
 
 //
+
+-------------------------//---------------------
