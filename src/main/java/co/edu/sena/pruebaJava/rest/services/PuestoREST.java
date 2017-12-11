@@ -5,8 +5,10 @@
  */
 package co.edu.sena.pruebaJava.rest.services;
 
+import co.edu.sena.pruebaJava.jpa.entities.Parqueadero;
 import co.edu.sena.pruebaJava.jpa.sessions.PuestoFacade;
 import co.edu.sena.pruebaJava.jpa.entities.Puesto;
+import co.edu.sena.pruebaJava.jpa.sessions.ParqueaderoFacade;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.ws.rs.Consumes;
@@ -30,6 +32,9 @@ public class PuestoREST {
     
     @EJB
     private PuestoFacade puestoEJB;
+    
+    @EJB 
+    private ParqueaderoFacade parqueaderoEJB;
              
     @GET 
     public List<Puesto> findAll(){

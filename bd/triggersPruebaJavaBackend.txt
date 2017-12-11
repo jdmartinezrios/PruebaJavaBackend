@@ -44,3 +44,12 @@ END;
 //
 
 -------------------------//---------------------
+
+
+create trigger verificarPuestos before update on parqueadero 
+for each row
+begin
+if(new.tamano < 0)then 
+signal sqlstate '45000'; 
+end if;
+end;
